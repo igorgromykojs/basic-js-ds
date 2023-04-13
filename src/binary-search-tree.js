@@ -19,8 +19,12 @@ class BinarySearchTree {
   }
 
   root() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (this.root == undefined) {
+      return null;
+    } else {
+      return this.root.data;
+    }
+    
   }
 
   add(data) {
@@ -58,9 +62,18 @@ class BinarySearchTree {
     }
   }
 
-  find(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  find(data) {
+    function magic(currentNode) {
+      if (currentNode == null)
+        return null;
+      if (currentNode.data == data)
+        return currentNode;
+      else if (currentNode.data > data)
+          return magic(currentNode.left);
+        else
+          return magic(currentNode.right);
+    }
+    return magic(this.root);
   }
 
   remove(data) {
@@ -121,6 +134,12 @@ class BinarySearchTree {
     return node.data;
   }
 }
+// const BST = new BinarySearchTree();
+// BST.add(7);
+// // BST.add(9);
+// // BST.root();
+// console.log(BST.root);
+
 // class BinarySearchTree {
 
 //   root() {
