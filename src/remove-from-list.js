@@ -26,6 +26,11 @@ function removeKFromList(/* l, k */) {
   throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 }
+// function removeKFromList(l, k) {
+//   let res = l.filter(item => item != k);
+//   return res;
+// }
+// console.log(removeKFromList([3, 1, 2, 3, 4, 5], 3));
 
 module.exports = {
   removeKFromList
