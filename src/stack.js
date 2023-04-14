@@ -12,23 +12,65 @@ const { NotImplementedError } = require('../extensions/index.js');
  * stack.pop(); // undefined
  *
  */
-class Stack {
-  push(/* element */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  }
+// class Node {
+//   constructor(element) {
+//     this.element=element;
+//     this.next=null;
+//   }
+// }
+// class Stack {
+//   constructor() {
+//     this.first=null;
+//     this.last=null;
+//     this.size=0;
+//   }
 
-  pop() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  }
+//   push(element) {
+//     let newNode = new Node(element);
+//     if(!this.first) {
+//       this.first=newNode;
+//       this.last=newNode;
+//     } else {
+//       let temp=this.first;
+//       this.first=newNode;
+//       this.first.next=temp;
+//     }
+//     return ++this.size;
+//   }
 
-  peek() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+//   pop() {
+//     if(!this.first) return null;
+//     let temp=this.first;
+//     if (this.first === this.last){
+//       this.last=null;
+//     }
+//     this.first=this.first.next;
+//     this.size --;
+//     return temp.element;
+//   }
+
+//   peek() {
+//     return this.element;
+//   }
+// }
+class Stack{
+  constructor(... args ){
+    this.store = [... args.reverse()];
+  }
+  peek(){
+    return this.store[0];
+  }
+  push(value){
+    return this.store.unshift(value);
+  }
+  pop(){
+   return this.store.shift();
   }
 }
-
+// const q = new Stack();
+// q.push(1);
+// q.pop();
+// console.log(q);
 module.exports = {
   Stack
 };
