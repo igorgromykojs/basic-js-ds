@@ -15,20 +15,15 @@ class Node {
 }
 class BinarySearchTree {
   constructor() {
-    this.root = null;
+    this.ro = null;
   }
 
   root() {
-    if (this.root == undefined) {
-      return null;
-    } else {
-      return this.root.data;
-    }
-    
+    return this.ro;
   }
 
   add(data) {
-    this.root = addWithin(this.root, data);
+    this.ro = addWithin(this.ro, data);
 
     function addWithin(node, data) {
       if (!node) {
@@ -47,7 +42,7 @@ class BinarySearchTree {
   }
 
   has(data) {
-    return searchWithin(this.root, data);
+    return searchWithin(this.ro, data);
 
     function searchWithin(node, data) {
       if (!node) {
@@ -73,11 +68,11 @@ class BinarySearchTree {
         else
           return magic(currentNode.right);
     }
-    return magic(this.root);
+    return magic(this.ro);
   }
 
   remove(data) {
-    this.root = removeNode(this.root, data);
+    this.ro = removeNode(this.ro, data);
 
     function removeNode(node, data) {
       if (!node) {
@@ -113,10 +108,10 @@ class BinarySearchTree {
   }
 
   min() {
-    if (!this.root) {
+    if (!this.ro) {
       return;
     }
-    let node = this.root;
+    let node = this.ro;
     while (node.left) {
       node = node.left;
     }
@@ -124,10 +119,10 @@ class BinarySearchTree {
   }
 
   max() {
-    if (!this.root) {
+    if (!this.ro) {
       return;
     }
-    let node = this.root;
+    let node = this.ro;
     while (node.right) {
       node = node.right;
     }
@@ -136,9 +131,9 @@ class BinarySearchTree {
 }
 // const BST = new BinarySearchTree();
 // BST.add(7);
-// // BST.add(9);
+// BST.add(9);
 // // BST.root();
-// console.log(BST.root);
+// console.log(BST.rootShow());
 
 // class BinarySearchTree {
 
